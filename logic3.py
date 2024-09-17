@@ -41,3 +41,34 @@ def alarm_clock(day, vacation):
   else: 
     return clock0
   
+  
+#   Given an array of ints length 3, return an array with the elements "rotated left" so {1, 2, 3} yields {2, 3, 1}.
+
+# rotate_left3([1, 2, 3]) → [2, 3, 1]
+# rotate_left3([5, 11, 9]) → [11, 9, 5]
+# rotate_left3([7, 0, 0]) → [0, 0, 7]
+
+# def rotate(nums):
+#     a = nums.pop(0)
+#     return nums.append(a)
+
+# Given an array of ints length 3, return a new array with the elements in reverse order, so {1, 2, 3} becomes {3, 2, 1}.
+
+
+def reverse3(nums):
+  ele = []
+  for i in range(len(nums)-1, -1,-1):
+    ele.append(nums[i]) 
+  return ele
+
+# Given an array of ints length 3, figure out which is larger, the first or last element in the array, and set all the other elements to be that value. Return the changed array.
+
+# max_end3([1, 2, 3]) → [3, 3, 3]
+# max_end3([11, 5, 9]) → [11, 11, 11]
+# max_end3([2, 11, 3]) → [3, 3, 3]
+  
+def max_end3(nums):
+  mx= max(nums[0], nums[len(nums)-1])
+  for i in range(len(nums)):
+    nums[i]= mx
+  return nums
