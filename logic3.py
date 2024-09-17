@@ -72,3 +72,19 @@ def max_end3(nums):
   for i in range(len(nums)):
     nums[i]= mx
   return nums
+
+# Given a non-negative number "num", return True if num is within 2 of a multiple of 10. Note: (a % b) is the remainder of dividing a by b, so (7 % 5) is 2. See also: Introduction to Mod
+
+# near_ten(12) → True
+# near_ten(17) → False
+# near_ten(19) → True
+
+def near_ten(num):
+  n = num % 10
+  return n in range(3) or 10 - n == 1 or 10 - n == 2 
+  
+def near_ten(num):
+  n = num % 10
+  return n in range(3) or  n >= 8 
+  
+  
