@@ -64,3 +64,24 @@ def fix_teen(x):
     return 0
   return x
 
+
+# Given two strings, return True if either of the strings appears at the very end of the other string, ignoring upper/lower case differences (in other words, the computation should not be "case sensitive"). Note: s.lower() returns the lowercase version of a string.
+# end_other('Hiabc', 'abc') → True
+# end_other('AbC', 'HiaBc') → True
+# end_other('abc', 'abXabc') → True
+  
+def end_other(a, b):
+  diff = abs(len(b)-len(a))
+  if len(a) <= len(b):
+    return a.lower() in b[diff:].lower()
+  else:
+    return b.lower() in a[diff:].lower()
+
+    
+def end_other(a, b):
+  a =  a.lower()
+  b = b.lower()
+  return a.endswith(b) or b.endswith(a)
+  
+
+    
