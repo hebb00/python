@@ -1,7 +1,6 @@
-
-# def isPalindrome(x):
-#     strX = str(x)
-#     print(strX == strX[::-1])
+def isPalindrome(x):
+    strX = str(x)
+    print(strX == strX[::-1])
 
 def strStr(haystack, needle):
 
@@ -12,7 +11,3 @@ def strStr(haystack, needle):
                     return i
     return -1
 
-if __name__ == "__main__":
-    haystack = "hello"
-    needle = "ll"
-    print(strStr(haystack, needle))
