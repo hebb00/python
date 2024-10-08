@@ -18,3 +18,8 @@ class LinkedList:
             node = node.next
         nodes.append("None")
         return " -> ".join(nodes)
+
+if __name__ == "__main__":
+     myNode = Node(4)
+     
+     print(myNode.data)
