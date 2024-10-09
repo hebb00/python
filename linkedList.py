@@ -18,7 +18,15 @@ class LinkedList:
             print(temp.data,end=' ') # Print the data in the current node
             temp = temp.next # Move to the next node
         print()  # Ensures the output is followed by a new line
-        
+    def insertAtEnd(self, new_data):
+        new_node = Node(new_data)  # Create a new node
+        if self.head is None:
+            self.head = new_node  # If the list is empty, make the new node the head
+            return
+        last = self.head 
+        while last.next:  # Otherwise, traverse the list to find the last node
+            last = last.next
+        last.next = new_node  # Make the new node the next node of the last node
 if __name__ == "__main__":
     # Create a new LinkedList instance
     llist = LinkedList()
@@ -33,3 +41,8 @@ if __name__ == "__main__":
 
     # Print the list
     llist.printList()
+    list = LinkedList()
+    list.insertAtEnd(4)
+    list.insertAtEnd(6)
+    list.insertAtEnd(8)
+    list.printList()
