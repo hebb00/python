@@ -18,5 +18,15 @@ def duplicate(arr):
                d.add(arr[i])
                
     return d
+# program that revers a list without using a second list
+def reversL(l):
+    j = -1
+    i = 0
+    while i < len(l) //2:
+        l[i], l[j] = l[j], l[i]
+        j = j -1
+        i= i+1
+    return l
+        
 if __name__ == "__main__":
-    print(duplicate([4,4,3,5,6]))
+    print(reversL([4,4,3,5,6]))
