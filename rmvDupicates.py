@@ -4,18 +4,15 @@ def removeDuplicates( nums):
         :rtype: int
         """
        
-        j = 1
-        i = 0
-
-        while i < len(nums):
-            while j < len(nums)-i:
-                if nums[i] == nums[j]:
-                    nums.pop(j)
-                    break
-                j+= 1
-            i+= 1
-       
-        return len(nums)
+        j = 0
+        for i in range(len(nums)):
+            print(j,"bfr")   
+            if nums[i] not in nums[:j]:
+                nums[j]=nums[i]
+                j = j+1
+            print(j) 
+        
+            return len(nums)
         
 if __name__ == "__main__":
     print(removeDuplicates([4,4,4,5]))
