@@ -7,7 +7,9 @@
 #   '4' : ['8'],
 #   '8' : []
 # }
-graph={}
+from collections import defaultdict 
+
+graph=defaultdict(list)
 def AddNodes(graph ,parent, child):
     
     if parent not in graph:
@@ -27,8 +29,8 @@ def dfs(visited, graph, node):  #function for dfs
 # Driver Code
 if __name__ == "__main__":
     AddNodes(graph,'5','6')
-    AddNodes(graph,'3','7')
-    AddNodes(graph, '3','2')
+    AddNodes(graph,'6','7')
+    AddNodes(graph, '7','2')
     AddNodes(graph, '7','8')
     print(graph)
     print("Following is the Depth-First Search")
