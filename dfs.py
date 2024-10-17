@@ -1,13 +1,20 @@
 # Using a Python dictionary to act as an adjacency list
-graph = {
-  '5' : ['3','7'],
-  '3' : ['2', '4'],
-  '7' : ['8'],
-  '2' : [],
-  '4' : ['8'],
-  '8' : []
-}
-
+# graph = {
+#   '5' : ['3','7'],
+#   '3' : ['2', '4'],
+#   '7' : ['8'],
+#   '2' : [],
+#   '4' : ['8'],
+#   '8' : []
+# }
+graph={}
+def AddNodes(graph ,parent, child):
+    
+    if parent not in graph:
+      graph.update({parent:[child]})
+    else:
+      graph[parent].append(child)
+        
 visited = set() # Set to keep track of visited nodes of graph.
 
 def dfs(visited, graph, node):  #function for dfs 
@@ -19,6 +26,10 @@ def dfs(visited, graph, node):  #function for dfs
 
 # Driver Code
 if __name__ == "__main__":
-
+    AddNodes(graph,'5','6')
+    AddNodes(graph,'3','7')
+    AddNodes(graph, '3','2')
+    AddNodes(graph, '7','8')
+    print(graph)
     print("Following is the Depth-First Search")
     dfs(visited, graph, '5')
