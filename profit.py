@@ -16,19 +16,18 @@
 def maxProfit(prices):
     """
     :type prices: List[int]
-    :rtype: int
+    :rtprices[0]ype: int
     """  
-    dif = 0
+    p = 10**4
     for i in range(len(prices)):
-        for j in range(i+1,len(prices)):
-            if dif <  prices[j] - prices[i]:
-                dif = prices[j] - prices[i] 
-    return dif
+        if p > prices[i]:
+            p = prices[i]
+            m = max(prices[i:])
 
-
+    return m-p
 if __name__ == "__main__":
     
-        test = [5,4,3]
+        test = [3,6,9]
         print(maxProfit(test))
         
     
