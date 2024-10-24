@@ -5,13 +5,16 @@ class TreeNode(object):
         self.left = left
         self.right = right
         
-        
+out =[]
+
 def preTraversal(tree):
     if not tree:
         return
-    print(tree.val)
+    out.append(tree.val)
     preTraversal(tree.left)
     preTraversal(tree.right)
+    
+    
     
     
     
@@ -25,3 +28,4 @@ if __name__ == "__main__":
     node.left=nn
     node.right=n
     preTraversal(node)
+    print(out)
