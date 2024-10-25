@@ -7,12 +7,23 @@ class TreeNode(object):
         
 out =[]
 
-def preTraversal(tree):
-    if not tree:
-        return
-    out.append(tree.val)
-    preTraversal(tree.left)
-    preTraversal(tree.right)
+def preTraversal(root):
+    if not root:
+        return []
+    st = [root]
+    while st:
+        node = st.pop()
+        out.append(node.val)
+        if node.right:
+            st.append(node.right)
+        if node.left:
+            st.append(node.left)
+    return out
+        
+        
+        
+    
+
     
     
     
