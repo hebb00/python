@@ -9,13 +9,14 @@ def lengthOfLastWord(s):
     :type s: str
     :rtype: int
     """
-    st = s[::-1].lstrip()
-
-    for i in range(len(st)):
+    st = s.rstrip()
+    c=0
+    for i in range(len(st)-1,-1,-1):
+   
         if st[i] == " ":
-            return i
-    
-    return i +1
+            return c
+        c=c+1
+    return c
     
 if __name__ == '__main__':
-    print(lengthOfLastWord("   rrd  "))
+    print(lengthOfLastWord("   rr"))
