@@ -14,20 +14,24 @@ def postorderTraversal(root):
 
     if not root:
         return []
-    st = [root]
+    st=[root]
     out=[]
+    if not root:
+        return []
     while st:
         node = st.pop()
-        out.append(node.val)
-        if node.right:
-            st.append(node.right)
-           
-        if node.left:
-            st.append(node.left)
-    res =[] 
-    while out:
-        res.append(out.pop())
-    return out
+        if node:
+            out.append(node.val)
+            if node.left:
+                st.append(node.left)
+            if node.right:
+                st.append(node.right)
+
+
+    
+    return out[::-1]
+    
+        
         
 
 if __name__ == '__main__':
