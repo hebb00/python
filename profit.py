@@ -18,10 +18,9 @@ def maxProfit(prices):
     :type prices: List[int]
     :rtprices[0]ype: int
     """  
-    p = 10**4
+    p = min(prices)
     for i in range(len(prices)):
-        if p > prices[i]:
-            p = prices[i]
+        if prices[i] == p:
             m = max(prices[i:])
 
     return m-p
